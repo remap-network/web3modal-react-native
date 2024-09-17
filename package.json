@@ -33,7 +33,8 @@
     "changeset:prepublish": "yarn run clean; yarn install; yarn version:update; yarn run lint && yarn run prettier; yarn run build; yarn run test;",
     "changeset:publish": "yarn run changeset:prepublish; yarn run changeset publish",
     "changeset:version": "changeset version; yarn run version:update; yarn install --refresh-lockfile",
-    "version:update": "./scripts/bump-version.sh"
+    "version:update": "./scripts/bump-version.sh",
+    "postinstall": "yarn run clean; yarn install && yarn run prettier; yarn run build"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.5.0",
